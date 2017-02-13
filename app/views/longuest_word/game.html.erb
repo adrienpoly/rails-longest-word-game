@@ -1,14 +1,17 @@
-<h1>LonguestWord#game</h1>
+<h1 class="text-center">Longuest Word Game</h1>
 
-<%= @grid %>
+<div class="grid">
+  <% @grid.each do |letter| %>
+    <span class="letter"><%= letter %></span>
+  <% end  %>
+</div>
 
-<form action="/score" method="get">
-  <div class="form-group">
-    <label for="try">your best shot</label>
-    <input type="text" class="form-control" name="your_try" id="try" placeholder="Your best shot">
-  </div>
-  <!-- <input type="hidden" name="grid" multiple="multiple" value="<%= @grid.join(",") %>"> -->
-  <!-- <input type="hidden" name="start_time" value="<%= @start_time %>"> -->
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="answer">
+  <form action="/score" method="get" class="">
+    <div class="form-group col-md-10">
+      <!-- <label for="try">your best shot</label> -->
+      <input type="text" class="form-control input-lg" name="your_try" id="try" placeholder="Your best shot">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg col-md-2">Submit</button>
+  </form>
+</div>

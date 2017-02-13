@@ -1,11 +1,9 @@
 
-URI_SYS = "https://api-platform.systran.net/translation/text/translate?source=en&target=fr&key="
-+ Rails.application.secrets.api_key
-+ "&input="
+URI_SYS = "https://api-platform.systran.net/translation/text/translate?source=en&target=fr&key=" + Rails.application.secrets.api_key + "&input="
 
 class LonguestWordController < ApplicationController
   def game
-    @grid = generate_grid(20)
+    @grid = generate_grid(10)
     @start_time = Time.now
     session[:grid] = @grid
     session[:start_time] = @start_time
